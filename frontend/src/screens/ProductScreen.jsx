@@ -34,12 +34,15 @@ const ProductScreen = () => {
     navigate('/cart');
   };
 
+
   const {
     data: product,
     isLoading,
     refetch,
     error,
   } = useGetProductDetailsQuery(productId);
+
+  console.log([...Array((Number(product.countInStock))).keys()]);
 
   const { userInfo } = useSelector((state) => state.auth);
 
